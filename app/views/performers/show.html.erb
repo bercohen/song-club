@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+
+  <strong>User:</strong>
+  <%= User.find(@performer.user_id).name_first %>
+
+  <%= User.find(@performer.user_id).name_last %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= User.find(@performer.user_id).email %>
+</p>
+
+<p>
+  <strong>Music Link:</strong>
+  <%= User.find(@performer.user_id).link %>
+</p>
+
+<p>
+  <strong>Concert:</strong>
+  <%= Concert.find(@performer.concert_id).venue %>
+   <%= Concert.find(@performer.concert_id).date %>
+</p>
+
+<%= form_tag performer_path(@performer), method: 'patch' do 
+    button_tag 'Add to Concert'
+  end %>
+
+<form action="/performers/<%= @performer.id %>" method="post">
+    <input name="_method" type="hidden" value="patch" />
+   <button type="submit">Add to Concert</button>
+ 
+</form>
+
+<%= link_to 'Edit', edit_performer_path(@performer) %> |
+<%= link_to 'Back', performers_path %>

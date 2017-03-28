@@ -1,0 +1,14 @@
+<%= link_to "See Other Members", users_path %>
+<ul>
+	<li><%= @user.name_first%></li>
+	<li><%= @user.name_last%></li>
+	<li><%= @user.email %></li>
+	<li><%= @user.link%></li>
+</ul>
+<%@user.oversees.each do |group|%>
+			<%=link_to group.name, group%>
+		<%end%>
+
+<p>
+	<%=link_to 'Requests',performers_path%>
+</p>

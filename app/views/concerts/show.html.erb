@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Group:</strong>
+  <%= @concert.group.name %>
+</p>
+
+<p>
+  <strong>Venue:</strong>
+  <%= @concert.venue %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @concert.date %>
+</p>
+
+<p>
+  <strong>Adress:</strong>
+  <%= @concert.address %>
+</p>
+
+<form action="/performers" method="post">
+   <input type="hidden" name="concert_id" value="<%=@concert.id%>">
+   <button type="submit">Join</button>
+ </form>
+
+ <%@concert.performers.each do |p|%>
+   <%if p.status == "active"%>
+   <%=p.user.name_first%>
+   <%end%>
+  <%end%>
+
+
+<%= link_to 'Edit', edit_group_concert_path(@concert) %> 
+<%= link_to 'Back', group_concerts_path %>
+

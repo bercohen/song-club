@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SongClub</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+
+  </head>
+
+  <body>
+
+  <nav class="navbar navbar-fixed-left navbar-minimal animate" role="navigation">
+      <div class="navbar-toggler animate">
+      <span class="menu-icon"></span>
+    </div>
+        <ul class=" navbar-menu animate">
+                <li><%= link_to "Home",   '/' %></li>
+          <% if !user_signed_in? %>
+          <li><%= link_to "Login", new_user_session_path %></li>
+         <% else %>
+          <li><%= link_to "Logout", destroy_user_session_path, :class => "button", method: :delete %></li>
+          <li><%= link_to "My Profile", current_user %></li>
+         <% end %>
+         <% if !user_signed_in? %>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <% end %>
+      
+        </ul>
+</nav>
+
+ 
+  	<ul>
+  		<li><%= link_to "Home",   '/' %></li>
+		<% if !user_signed_in? %>
+		      <li><%= link_to "Login", new_user_session_path %></li>
+	       <% else %>
+		      <li><%= link_to "Logout", destroy_user_session_path, :class => "button", method: :delete %></li>
+          <li><%= link_to "My Profile", current_user %></li>
+	       <% end %>
+	       <% if !user_signed_in? %>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <% end %>
+
+  	</ul>
+    <%= yield %>
+  </body>
+</html>
