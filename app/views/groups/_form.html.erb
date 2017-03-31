@@ -15,9 +15,11 @@
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
-
- 
-  <%= link_to "Add concert",new_group_concert_path(group)%>
+ <%if group&.id%>
+ <button class="button-primary">
+    <%= link_to("Add concert",new_group_concert_path(group)) %>
+</button>
+<%end%>
 
   
 

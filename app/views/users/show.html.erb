@@ -1,14 +1,55 @@
-<%= link_to "See Other Members", users_path %>
+<div class="container">
+  <div class="row">
+    <div class="five columns main">
+
+
+
+<h2 class="mid"><%= @user.name_first%> <%= @user.name_last%></h2>
 <ul>
-	<li><%= @user.name_first%></li>
-	<li><%= @user.name_last%></li>
-	<li><%= @user.email %></li>
-	<li><%= @user.link%></li>
+	<li><strong>Email: </strong><%= @user.email %></li>
+	<li><strong>Music Link: </strong><%= link_to @user.link, url_with_protocol(@user.link) %></li>
+
+  
 </ul>
-<%@user.oversees.each do |group|%>
-			<%=link_to group.name, group%>
-		<%end%>
+
+
+<table>
+  <thead>
+    <tr>
+      <th><h3><%= @user.name_first%> 's Groups</h3></th>
+    </tr>
+  </thead>
+
+
+	<tbody>
+    <%@user.oversees.each do |group|%>
+      <tr>
+        <td><h5><%=link_to group.name, group%></h5></td>
+      </tr>
+    	<% end %>
+  	</tbody>
+</table>
+
+<%if @user.oversees.length > 0 %>
+
+
+	<%=link_to performers_path do
+    content_tag :button, "Requests"
+  end %>
+
+  <%end%>
+
+
+
+
 
 <p>
-	<%=link_to 'Requests',performers_path%>
+	<%= link_to "See Other Musicians", users_path %>
 </p>
+<p>
+  <%=link_to "edit",   edit_user_registration_path%>
+</p>
+
+	</div>
+  </div>
+</div>

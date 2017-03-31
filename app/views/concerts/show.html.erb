@@ -1,38 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="four columns reg">
+
 <p id="notice"><%= notice %></p>
 
 
-<p>
-  <strong>Group:</strong>
+<h1 class="mid">
   <%= @concert.group.name %>
-</p>
-
-<p>
-  <strong>Venue:</strong>
+</h1>
+<h3>
   <%= @concert.venue %>
-</p>
+</h3>
+
+
+
+<hr>
+<!-- <h3>Performers</h3 -->
+<ul>
+<%@concert.performers.each do |p|
+  next unless p.user%>
+   <%if p.status == "active"%>
+  <h5> <%= link_to p.user.full_name, performer_path(p) %> </h5>
+   <%end%>
+  <%end%>
+</ul>
+
+<hr>
 
 <p>
-  <strong>Date:</strong>
-  <%= @concert.date %>
+  <strong>Date:</strong><%= @concert.date %>
+  
+  <strong>Adress:</strong><%= @concert.address %>
 </p>
-
-<p>
-  <strong>Adress:</strong>
-  <%= @concert.address %>
-</p>
-
 <form action="/performers" method="post">
    <input type="hidden" name="concert_id" value="<%=@concert.id%>">
    <button type="submit">Join</button>
  </form>
 
- <%@concert.performers.each do |p|%>
-   <%if p.status == "active"%>
-   <%=p.user.name_first%>
-   <%end%>
-  <%end%>
+<%= link_to 'Edit', edit_group_concert_path(@concert.group, @concert) %> 
 
 
-<%= link_to 'Edit', edit_group_concert_path(@concert) %> 
-<%= link_to 'Back', group_concerts_path %>
+  </div>
+  </div>
+</div>
 

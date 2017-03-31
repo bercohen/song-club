@@ -1,20 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="four columns main">
+
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<h2 class="mid">
   <%= @group.name %>
-</p>
-<p>
-	
-	<%@group.concerts.each do |concert|%>
-	<%=link_to concert.venue, group_concert_path(@group)%>
-	<%=concert.date%>
-	<%end%>
-	
-</p>
+</h2>
 
 
+<table>
+  <thead>
+    <tr>
+      <th><h4>Concert</h4></th>
+      <th><h4>Date</h4></th>
+    </tr>
+  </thead>
 
+  <tbody>
+   	<%@group.concerts.each do |concert|%>
+
+      <tr>
+        <td><h5><%=link_to concert.venue, group_concert_path(@group,concert)%></h5></td>
+        <td><h5><%=concert.date%></h5></td>
+      </tr>
+    	<% end %>
+  	</tbody>
+</table>
+
+<%if @group.user_id == current_user.id%>
 <%= link_to 'Edit', edit_group_path(@group) %>
+<%end%>
 
 <%= link_to 'Back', groups_path %>
+
+
+ 	</div>
+  </div>
+</div>

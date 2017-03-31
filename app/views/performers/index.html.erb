@@ -1,6 +1,10 @@
+<div class="container">
+  <div class="row">
+    <div class="four columns main">
+
 <p id="notice"><%= notice %></p>
 
-<h1>Performers</h1>
+<h1 class="mid">Requests</h1>
 
 <table>
   <thead>
@@ -12,15 +16,14 @@
   </thead>
 
   <tbody>
-    <% @performers.each do |performer| %>
+    <% @performers.each do |performer|
+    next unless performer.user %>
       <tr>
         <td><%= performer.user.full_name %></td>
          <td><%= Concert.find(performer.concert_id).venue %>
              <%= Concert.find(performer.concert_id).date %></td>
-        <td><%= link_to 'Show', performer %></td>
-        <td><%= link_to 'Edit', edit_performer_path(performer) %></td>
-        <td><%= link_to 'Destroy', performer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td></td>
+        <td><%= link_to 'View', performer %></td>
+        <td><%= link_to 'Decline', performer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +31,6 @@
 
 <br>
 
-<%= link_to 'New Performer', new_performer_path %>
+    </div>
+  </div>
+</div>

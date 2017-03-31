@@ -7,7 +7,7 @@ class PerformersController < ApplicationController
   # GET /performers.json
   def index
     @performers = Performer.all.select do |performer|
-      performer.concert && performer.concert.group.user_id == current_user.id && performer.requested?
+      performer.concert && performer.concert.group && performer.concert.group.user_id == current_user.id && performer.requested?
     end
   end
 
@@ -48,6 +48,7 @@ class PerformersController < ApplicationController
   def update
     @performer = Performer.find(params[:id])
     @performer.status = :active
+    flash[:notice] = "Performer successfully added"
     respond_to do |format|
       if @performer.save
         format.html { redirect_to @performer, notice: 'Performer was successfully updated.' }

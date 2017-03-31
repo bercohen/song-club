@@ -1,5 +1,21 @@
-<ul>
-	<li><%= link_to "Create Group",new_group_path %></li>
-	<li><%= link_to "Groups",groups_path %></li>
+
+
+<div class="container">
+	<div class="row">
+		<div class="eight columns offset-by-two top">
+			SONG CLUB
+		</div>
+	</div>
+	<div class="row">
+		<div class="four columns offset-by-four home">
+		<%= link_to "Groups",groups_path, :class => "button button-primary" %>
+	    </div>
+	 </div>
+	 <div class="row">
+		<div class="four columns offset-by-four">
+		<%= link_to "Create Group",new_group_path, :class => "button button-primary" %>
+		</div>
+	</div>
+</div>
 	
-</ul>
+

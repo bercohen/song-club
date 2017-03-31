@@ -1,11 +1,16 @@
 class ConcertsController < ApplicationController
   before_action :set_concert, only: [:show, :edit, :update, :destroy]
   before_action :authorized?, only: [:edit, :update, :destroy]
-  before_action :set_group
+  before_action :set_group, except: [:list]
   # GET /concerts
   # GET /concerts.json
   def index
+    @concerts = @group.concerts
+  end
+
+  def list
     @concerts = Concert.all
+    render :action => "index"
   end
 
   # GET /concerts/1
@@ -28,6 +33,7 @@ class ConcertsController < ApplicationController
   def create
     @concert = Concert.new(concert_params)
     @concert.group_id = @group.id
+    @concert.user_id = current_user.id
 
     respond_to do |format|
       if @concert.save
@@ -85,4 +91,5 @@ class ConcertsController < ApplicationController
     def set_group
       @group = Group.find(params[:group_id])
     end
+
 end

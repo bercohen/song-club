@@ -1,0 +1,8 @@
+##delete a concert
+<td><%= link_to 'Destroy', group_concert_path(concert.group,concert), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+
+  ## edit a concert
+
+   <td><%= link_to 'Edit', edit_group_concert_path(concert.group,concert) %></td>
+        

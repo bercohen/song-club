@@ -1,4 +1,8 @@
-<h2>Sign up</h2>
+<div class="container">
+  <div class="row">
+    <div class="four columns main">
+
+<h2 class="mid">Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -16,6 +20,11 @@
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Music_Link %><br />
+    <%= f.text_field :link %>
   </div>
 
   <div class="field">
@@ -37,3 +46,8 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+    </div>
+  </div>
+</div>
+

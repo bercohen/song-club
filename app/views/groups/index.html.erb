@@ -1,11 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="six columns main">
 <p id="notice"><%= notice %></p>
 
-<h1>Groups</h1>
+<h1 class="mid">Groups</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -13,7 +15,7 @@
   <tbody>
     <% @groups.each do |group| %>
       <tr>
-         <td><%= link_to group.name, group_path(group) %></td>
+         <td><h4><%= link_to group.name, group_path(group) %></h4></td>
 
        </tr>
     <% end %>
@@ -22,4 +24,9 @@
 
 <br>
 
-<%= link_to 'New Group', new_group_path() %>
+<button><%= link_to 'New Group', new_group_path() %></button>
+
+    </div>
+  </div>
+</div>
+

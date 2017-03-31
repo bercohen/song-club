@@ -17,6 +17,57 @@
 
 *{
 	box-sizing: border-box;
+
+}
+
+body.static {
+	background-image: url("mic.jpeg");
+	background-size: cover;
+}
+
+.back{
+	background-image: url("mic1.jpeg");
+	background-size: cover;
+	height: 100%;
+	width:50vw;
+	position: fixed;
+	margin-left:50vw;
+}
+body.static .back {
+	background: none;
+}
+.top{
+	font-size:80px;
+	color:#33C3F0;
+	margin-top: 30px;
+	font-family: 'Bevan', cursive;
+	 text-shadow: 2px 2px white;
+}
+
+.mid{
+	font-size:50px;
+	color:#33C3F0;
+}
+
+.home{
+	font-size:20vh;
+	color:#33C3F0;
+}
+
+.main{
+	margin-top: 15vh;
+	margin-right:15px;
+}
+
+.reg{
+	margin-top: 10vh;
+}
+
+.standard{
+	height:50px;
+	width:80px;
+	border-radius: 5%;
+	border:1px solid black;
 }
  
 .animate {
@@ -54,7 +105,7 @@
 
 	.navbar-minimal.open > .navbar-toggler,
 	.navbar-minimal > .navbar-toggler:hover {
-		background-color: rgb(128, 223, 255);
+		background-color: #33C3F0;
 	}
 
 	.navbar-minimal > .navbar-toggler > span {
@@ -108,7 +159,7 @@
        
 	}
   	.navbar-minimal > .navbar-menu > li > a:hover {
-		background:rgb(128, 223, 255);
+		background:#33C3F0;
 	}
 	.navbar-minimal > .navbar-menu > li > a > .glyphicon {
 		float: right;

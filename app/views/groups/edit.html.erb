@@ -1,6 +1,14 @@
-<h1>Editing Group</h1>
+<div class="container">
+  <div class="row">
+    <div class="six columns main">
+<h2 class="mid" >Editing Group</h2>
 
 <%= render 'form', group: @group %>
 
 <%= link_to 'Show', @group %> |
-<%= link_to 'Back', groups_path %>
+<%= link_to 'Back', groups_path %>|
+<%= link_to 'Delete Group', group_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+		</div>
+	</div>
+</div>

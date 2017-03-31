@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="four columns offset-by-four">
+
+<p id="notice"><%= notice %></p>
+
+<h1>Concerts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Goup</th>
+      <th>Venue</th>
+      <th>Date</th>
+      <th>Adress</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @concerts.each do |concert| %>
+      <tr>
+        <td><%= concert.user_id %></td>
+        <td><%= concert.group_id %></td>
+        <td><%= concert.venue %></td>
+        <td><%= concert.date %></td>
+        <td><%= concert.address %></td>
+        <td><%= link_to 'Show', group_concert_path(@group,concert) %></td>
+        <td><%= link_to 'Edit', edit_group_concert_path(@group,concert) %></td>
+        <td><%= link_to 'Destroy', group_concert_path(@group,concert), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Concert', new_group_concert_path %>
+    </div>
+  </div>
+</div>
+  

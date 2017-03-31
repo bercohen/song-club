@@ -1,4 +1,28 @@
-<% @users.each do |user| %>
-<%= link_to user.username, user %>
-<%= user.email %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="four columns main">
+ <h2 class="mid">Musicians</h2>
+
+
+<table>
+  <thead>
+    <tr>
+      <th><h5>Profile</h5></th>
+      <th><h5>Contact</h5></th>
+    </tr>
+  </thead>
+
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><h5><%= link_to user.full_name, user %></h5></td>
+        <td><h5><%= user.email %></h5></td>
+      </tr>
+    	<% end %>
+  	</tbody>
+</table>
+
+		</div>
+	</div>
+</div>
