@@ -28,9 +28,10 @@
     	<% end %>
   	</tbody>
 </table>
-
-<%if @group.user_id == current_user.id%>
-<%= link_to 'Edit', edit_group_path(@group) %>
+<%if user_signed_in? %>
+  <%if @group.user_id == current_user.id%>
+    <%= link_to 'Edit', edit_group_path(@group) %>
+  <%end%>
 <%end%>
 
 <%= link_to 'Back', groups_path %>

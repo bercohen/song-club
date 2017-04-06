@@ -36,9 +36,9 @@
    <input type="hidden" name="concert_id" value="<%=@concert.id%>">
    <button type="submit">Join</button>
  </form>
-
-<%= link_to 'Edit', edit_group_concert_path(@concert.group, @concert) %> 
-
+<% if user_signed_in? %>
+  <%= link_to 'Edit', edit_group_concert_path(@concert.group, @concert) %> 
+<% end %>
 
   </div>
   </div>
