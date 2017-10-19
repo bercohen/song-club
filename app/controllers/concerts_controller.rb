@@ -1,7 +1,7 @@
 class ConcertsController < ApplicationController
   before_action :set_concert, only: [:show, :edit, :update, :destroy]
   before_action :authorized?, only: [:edit, :update, :destroy]
-  before_action :set_group, except: [:list]
+  before_action :set_group, except: [:list, :about]
   # GET /concerts
   # GET /concerts.json
   def index
