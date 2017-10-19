@@ -48,6 +48,11 @@
     padding: 0; }
 }
 
+@media (max-width: 550px){
+  .column,
+.columns {width:100%; };
+}
+
 /* For devices larger than 550px */
 @media (min-width: 550px) {
   .container {
@@ -57,17 +62,17 @@
     margin-left: 4%; }
   .column:first-child,
   .columns:first-child {
-    margin-left: 0; }
+   /* margin-left: 0;*/ }
 
   .one.column,
   .one.columns                    { width: 4.66666666667%; }
   .two.columns                    { width: 13.3333333333%; }
   .three.columns                  { width: 22%;            }
-  .four.columns                   { width: 30.6666666667%; }
-  .five.columns                   { width: 39.3333333333%; }
+  /*.four.columns                   { width: 30.6666666667%; }*/
+  /*.five.columns                   { width: 39.3333333333%; }*/
   .six.columns                    { width: 48%;            }
   .seven.columns                  { width: 56.6666666667%; }
-  .eight.columns                  { width: 65.3333333333%; }
+  /*.eight.columns                  { width: 65.3333333333%; }*/
   .nine.columns                   { width: 74.0%;          }
   .ten.columns                    { width: 82.6666666667%; }
   .eleven.columns                 { width: 91.3333333333%; }
@@ -349,12 +354,16 @@ pre,
 blockquote,
 dl,
 figure,
-table,
+/*table,*/
 p,
 ul,
 ol,
 form {
   margin-bottom: 2.5rem; }
+
+  table{
+    width: 20%;
+  }
 
 
 /* Utilities
@@ -377,6 +386,8 @@ hr {
   margin-top: 3rem;
   margin-bottom: 3.5rem;
   border-width: 0;
+  width: 25vw;
+  margin-left: 0vw;
   border-top: 1px solid #E1E1E1; }
 
 

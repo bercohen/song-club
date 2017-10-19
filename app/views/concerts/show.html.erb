@@ -37,7 +37,10 @@
    <button type="submit">Join</button>
  </form>
 <% if user_signed_in? %>
-  <%= link_to 'Edit', edit_group_concert_path(@concert.group, @concert) %> 
+
+  <%if @concert.user_id == current_user.id%>
+    <%= link_to 'Edit', edit_group_concert_path(@concert.group, @concert) %> 
+  <% end %>
 <% end %>
 
   </div>

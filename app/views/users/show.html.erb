@@ -46,9 +46,14 @@
 <p>
 	<%= link_to "See Other Musicians", users_path %>
 </p>
+
+ <%if @user.id == current_user.id%>
+
 <p>
   <%=link_to "edit",   edit_user_registration_path%>
 </p>
+
+<%end%>
 
 	</div>
   </div>

@@ -25,13 +25,38 @@ body.static {
 	background-size: cover;
 }
 
+@media (max-width: 1200px) {
+
+
+
+body.concerts .back {
+	margin-left:55vw;
+}
+}
+
+/*body.concerts .ul {
+	margin-left:10vw;
+}*/
+}
+
+@media (max-width: 1020px) {
+
+
+body.concerts .back {
+	margin-left:60vw;
+}
+}
+
+
+
+
 .back{
 	background-image: url("mic1.jpeg");
 	background-size: cover;
 	height: 100%;
 	width:50vw;
 	position: fixed;
-	margin-left:50vw;
+	margin-left:53vw;
 }
 body.static .back {
 	background: none;
@@ -69,6 +94,55 @@ body.static .back {
 	border-radius: 5%;
 	border:1px solid black;
 }
+
+@media (max-width: 850px){
+	.row {
+
+		margin-left: 10vw;
+	}
+
+	body.concerts .row{
+	 	margin-left: 10vw !important;
+
+	}
+
+	 .back {
+		background: none;
+	}
+
+}
+/*@media (ma-width: 1050px){
+ .row {
+
+		margin-left: -5vw;
+	}
+}*/
+
+@media (min-width: 1000px) {
+
+	.row {
+
+		margin-left: -5vw;
+	}
+
+}
+@media (max-width: 1100px){
+	body.concerts th, td{
+	 	padding: 0px;
+
+	}
+	body.concerts .row{
+	 	margin-left: -5vw;
+
+	}
+}
+/*	body.users .row {
+
+		margin-left: -4vw;
+	}
+}*/
+
+
  
 .animate {
     	-webkit-transition: all 0.3s ease-in-out;
@@ -184,6 +258,10 @@ body.static .back {
 		min-height: 100%;
 	}
 
+	@media (min-width: 900px){
+
+	}
+
 	@media (min-width: 768px) {
 		.navbar-minimal.open {
 			width: 300px;
@@ -208,4 +286,14 @@ body.static .back {
 		}
 	
 	}
+
+	/*mobile orient*/
+
+	/*@media (max-width: 420px){
+
+		.top{
+			font-size:200px;
+		}
+
+	}*/
  
