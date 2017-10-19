@@ -51,7 +51,7 @@ class PerformersController < ApplicationController
     flash[:notice] = "Performer successfully added"
     respond_to do |format|
       if @performer.save
-        format.html { redirect_to @performer, notice: 'Performer was successfully updated.' }
+        format.html { redirect_to performers_url, notice: 'Performer was successfully updated.' }
         format.json { render :show, status: :ok, location: @performer }
       else
         format.html { render :edit }

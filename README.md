@@ -21,3 +21,7 @@ The database consisted of many-to-many relationships of:
 *In the future I would like to touch up on some of the user functionality and routing to make the site simpler to use.
 *Add some Javascript and styling to make the UX more enjoyable and improve the mobile responsiveness
 *Add the ability to upload pictures and videos of concerts that have happened 
+
+#Dumy Login
+*ber@gmail.com
+*123456

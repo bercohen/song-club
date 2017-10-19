@@ -31,13 +31,12 @@ body.static {
 
 body.concerts .back {
 	margin-left:55vw;
-}
+	}
 }
 
-/*body.concerts .ul {
-	margin-left:10vw;
+/*.gname{
+	max-width: 40vw;
 }*/
-}
 
 @media (max-width: 1020px) {
 
@@ -137,6 +136,13 @@ body.static .back {
 	}
 
 }
+
+@media(min-width: 850px){
+	.gname{
+		max-width: 40vw;
+	}
+}
+
 @media (max-width: 1100px){
 	body.concerts th, td{
 	 	padding: 0px;
